@@ -1,0 +1,134 @@
+.container-fluid{
+    padding: 0;
+}
+
+/* navbar */
+
+.navbar {
+    border-bottom: 1px solid rgb(0, 151, 30);
+    margin-bottom: 20px;
+}
+.navbar-nav{
+    margin: auto;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar-light .navbar-nav a.nav-link {
+    color:brown;
+    letter-spacing: 1px;
+}
+/* botão de adicionar */
+
+#add-link{
+    text-decoration: none;
+}
+
+.add-div {
+    background-color: blue;
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+}
+
+.fas.fa-plus {
+    color: #fff;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+/* search */
+
+.fas.fa-search {
+    position: absolute;
+    top: 12px;
+    right: 26px;
+    cursor: pointer;
+}
+
+.search-div{
+    padding: 0px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* lista de tarefas */
+
+.list-div {
+    padding: 0;
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.task-item{
+    list-style: none;
+    font-size: 20px;
+    height: 50px;
+    padding-top: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.fas.fa-trash, .fas.fa-edit{
+    cursor: pointer;
+    margin: 5px;
+    font-size: 20px;
+    float: right;
+}
+
+.fas.fa-trash {
+    color: crimson;
+}
+
+.fas.fa-edit {
+    color: #adff2f;
+}
+
+/* roda pé */
+
+footer {
+    background-color: #333;
+    height: 100px;
+    border-top: 1px solid #adff2f;
+}
+
+footer p {
+    color: #f5f5f5;
+    text-align: center;
+    top: 10%;
+    position: relative
+}
+
+/*  MESSAGES */
+
+ul.messages {
+    padding: 0;
+}
+
+ul.messages li {
+    list-style: none;
+}
+
+/* PAGINAÇÃO */
+
+.pagination {
+    margin-bottom: 20px;
+}
+
+.step-links {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step-links .current {
+    margin-left: 5px;
+    margin-right: 5px;
+}
