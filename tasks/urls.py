@@ -6,5 +6,6 @@ urlpatterns = [
     path('newtask/', views.NewTask, name="new-task"), #C
     path('task/<int:id>', views.TaskView, name="task-view"), #R
     path('edit/<int:id>', views.EditTask, name="task-edit"), #U
+    path('changestatus/<int:id>', views.ChangeStatus, name="change-status"), #U
     path('delete/<int:id>', views.DeleteTask, name='task-delete'), #D
 ]

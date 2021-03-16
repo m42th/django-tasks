@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock %}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/7c3b94dce8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
@@ -26,18 +27,33 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+                        {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Tarefas</a>
+                            <a class="nav-link active" href="task/">Tarefas</a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Usuários</a>
                         </li>
-                        
+                        {% else %}
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Sobre</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/accounts/login">Entrar</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/accounts/register">Registrar</a>
+                        </li>
+                        {% endif %}
+
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/accounts/logout">Sair</a>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -45,10 +61,10 @@
 
         {% block content %}{% endblock %}
         <footer>
-            <p>Matheus santos de Oliveira</p>
+            <p>Matheus Santos de Oliveira</p>
             <p>2021</p>
         </footer>
-        
+
     </div>
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
