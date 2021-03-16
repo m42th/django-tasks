@@ -24,7 +24,7 @@ def Tasklist(request):
         # created_at, description, done, id, title, updated_at
         tasks_list = Task.objects.all().order_by('-id').filter(user=request.user)
         #PAGINAÇÃO
-        paginator = Paginator(tasks_list, 3)
+        paginator = Paginator(tasks_list, 10)
         
         page = request.GET.get('page')
 
@@ -41,7 +41,7 @@ def NewTask(request):  # CRUD = C
             task.done = 'doing'
             task.user = request.user
             task.save()
-            return redirect('/task/')
+            return redirect('/')
     else:
         form = TaskForm()
         return render(request, 'task/newtask.html', {'form': form})
@@ -64,7 +64,7 @@ def EditTask(request, id):  # CRUD = U
 
         if(form.is_valid()):
             task.save()
-            return redirect('/task/')
+            return redirect('/')
         else:
             return
         return render(request, 'task/edittask.html', {'form':form, 'task':task})
@@ -82,11 +82,11 @@ def ChangeStatus(request, id):
 
     task.save()
 
-    return redirect('/task/')
+    return redirect('/')
 
 @login_required
 def DeleteTask(request, id): #CRUD = D
     task = get_object_or_404(Task, pk=id)
     task.delete()
     messages.info(request, 'Tarefa Deletada!')
-    return redirect('/task/')
+    return redirect('/')

@@ -24,6 +24,6 @@ $(document).ready(function() {
 
     $(filter).change(function(){
         var filter = $(this).val();
-        window.location.href = baseUrl + 'task/?filter=' + filter;
+        window.location.href = baseUrl + '?filter=' + filter;
     });
 });
